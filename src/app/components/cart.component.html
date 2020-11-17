@@ -1,6 +1,8 @@
 <h1>Your Cart:</h1>
 
-<h5 *ngFor="let item of cart;">
-
-    <p>{{item.item}} :{{item.count}}</p>
-</h5> 
+<h2 *ngFor="let item of cart;">
+    <div *ngIf="item.count > 0">
+        <p>{{item.item}} :{{item.count}}</p>
+        <button value="{{item.item}}" (click)="onRemove($event)">Remove</button>
+    </div>
+</h2> 
