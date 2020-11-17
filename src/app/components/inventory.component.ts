@@ -29,6 +29,21 @@ export class InventoryComponent implements OnInit {
     }
   }
 
+  removeItem($event) {
+    console.log($event.target.value)
+    switch($event.target.value) {
+      case 'Apples': 
+        this.appleCount = 0;
+        break;
+      case 'Oranges': 
+        this.orangeCount = 0;
+        break;
+      case 'Pears': 
+        this.pearCount = 0;
+        break;
+    }
+  }
+
   ngOnInit(): void {
   }
 

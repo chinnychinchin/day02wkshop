@@ -1,3 +1,4 @@
+<h1>Inventory</h1>
 <table>
     <tr *ngFor="let item of inventory">
         <img src={{item.imgUrl}} alt="no img found">
@@ -6,6 +7,8 @@
     </tr>
 </table>
 
-<p>Apples: {{appleCount}}</p>
-<p>Oranges: {{orangeCount}}</p>
-<p>Pears: {{pearCount}}</p>
+
+<h1>Cart</h1>
+<p>Apples: {{appleCount}}</p><button value="Apples" (click)="removeItem($event)">Remove</button>
+<p>Oranges: {{orangeCount}}</p><button value="Oranges" (click)="removeItem($event)">Remove</button>
+<p>Pears: {{pearCount}}</p><button value="Pears" (click)="removeItem($event)">Remove</button>
