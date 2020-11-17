@@ -7,15 +7,3 @@
     </tr>
 </table>
 
-
-<h1>Cart</h1>
-
-<div *ngIf="appleCount > 0">
-    <p>Apples: {{appleCount}}</p><button value="Apples" (click)="removeItem($event)">Remove</button>
-</div>
-<div *ngIf="orangeCount > 0">
-    <p>Oranges: {{orangeCount}}</p><button value="Oranges" (click)="removeItem($event)">Remove</button>
-</div>
-<div *ngIf="pearCount > 0">
-    <p>Pears: {{pearCount}}</p><button value="Pears" (click)="removeItem($event)">Remove</button>
-</div>

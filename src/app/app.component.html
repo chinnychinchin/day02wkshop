@@ -1,1 +1,3 @@
-<app-inventory></app-inventory>
+<app-inventory [inventory]="inventory" (updateCart)="pushToCart($event)"></app-inventory>
+
+<app-cart [cart]="cart"></app-cart>

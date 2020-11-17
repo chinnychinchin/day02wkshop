@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-inventory',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryComponent implements OnInit {
 
-  inventory = [{item: 'Apples', imgUrl: "assets/apple.png"},{item: 'Oranges', imgUrl: "assets/orange.png"},{item: 'Pears', imgUrl: "assets/pear.png"}]
+  @Input() inventory;
+  @Output() updateCart = new EventEmitter<string> ();
   appleCount:number = 0;
   orangeCount:number = 0;
   pearCount:number = 0;
@@ -15,34 +16,11 @@ export class InventoryComponent implements OnInit {
   constructor() { }
 
   onAdd($event) {
-    console.log($event.target.value)
-    switch($event.target.value) {
-      case 'Apples': 
-        this.appleCount += 1;
-        break;
-      case 'Oranges': 
-        this.orangeCount += 1
-        break;
-      case 'Pears': 
-        this.pearCount += 1;
-        break;
-    }
+    //console.log($event.target.value);
+    this.updateCart.next($event.target.value);
   }
 
-  removeItem($event) {
-    console.log($event.target.value)
-    switch($event.target.value) {
-      case 'Apples': 
-        this.appleCount = 0;
-        break;
-      case 'Oranges': 
-        this.orangeCount = 0;
-        break;
-      case 'Pears': 
-        this.pearCount = 0;
-        break;
-    }
-  }
+
 
   ngOnInit(): void {
   }
